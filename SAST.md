@@ -64,11 +64,13 @@ Interpreting SAST (Static Application Security Testing) reports in GitLab involv
 
 #### Where to Find the Report
 
-`CI/CD Pipeline` After a pipeline run, navigate to the pipeline results (CI/CD > Pipelines > your pipeline).
+Go to CI/CD > Pipelines in your GitLab project.
 
-`Security Tab` Go to the "Security" tab in the pipeline view.
+Click on the relevant pipeline.
 
-`SAST Section` You'll see SAST listed along with any issues found.
+Select the Security tab.
+
+Click on SAST to view the list of vulnerabilities.
 
 
 #### Each SAST issue includes :-
@@ -100,3 +102,18 @@ Suggestions on how to fix or mitigate the issue.
 `Tool`
 
 The scanner that detected it (e.g., Bandit, ESLint, Brakeman, etc.).
+
+
+#### What You Should Do
+
+`Prioritize` Focus on Critical and High severity with High confidence.
+
+`Verify` Review the code manually to confirm the issue (some false positives may exist).
+
+`Fix` Apply secure coding practices or the suggested remediation.
+
+`Document` Use GitLab’s Dismissal Comments if a finding is false positive or acceptable risk.
+
+`Track` Use the Security Dashboard for ongoing vulnerability tracking.
+
+You can download or view the raw gl-sast-report.json artifact if you want to parse it or use it in other tools.
