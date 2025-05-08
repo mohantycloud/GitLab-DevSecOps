@@ -49,5 +49,54 @@ Each vulnerability includes :-
 
 
 
+## Running SAST in GitLab pipelines
+========================================
+
+Running SAST, in GitLab pipelines helps you automatically detect security vulnerabilities in your code during the CI/CD process. 
+
+GitLab provides built-in SAST scanning capabilities that are easy to set up using predefined CI/CD templates.
 
 
+## Interpreting SAST reports in gitlab
+==========================================
+
+Interpreting SAST (Static Application Security Testing) reports in GitLab involves understanding the security vulnerabilities identified in your source code.
+
+#### Where to Find the Report
+
+`CI/CD Pipeline` After a pipeline run, navigate to the pipeline results (CI/CD > Pipelines > your pipeline).
+
+`Security Tab` Go to the "Security" tab in the pipeline view.
+
+`SAST Section` You'll see SAST listed along with any issues found.
+
+
+#### Each SAST issue includes :-
+
+`Vulnerability Title`
+
+A short description of the issue, e.g., "SQL Injection" or "Cross-Site Scripting (XSS)".
+
+`Severity`
+
+One of: Critical, High, Medium, Low, Info.
+
+`Confidence`
+
+Indicates how certain the tool is that this is a real issue (High, Medium, Low).
+
+`File & Line Number`
+
+Tells you exactly where the vulnerable code is.
+
+`Description`
+
+A more detailed explanation of the vulnerability and how it could be exploited.
+
+`Remediation Advice`
+
+Suggestions on how to fix or mitigate the issue.
+
+`Tool`
+
+The scanner that detected it (e.g., Bandit, ESLint, Brakeman, etc.).
