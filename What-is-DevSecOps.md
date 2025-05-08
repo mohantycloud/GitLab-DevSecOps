@@ -1,0 +1,198 @@
+## What is DevSecOps ?
+============================
+
+DevSecOps stands for Development, Security, and Operations. 
+
+It’s a software development approach that integrates security practices within the DevOps process.
+
+It is aiming to build secure software quickly and efficiently without sacrificing speed or quality.
+
+
+### Key Principles of DevSecOps :-
+
+`Shift-Left Security` Security is addressed early in the development lifecycle, not as an afterthought.
+
+`Automation` Security testing (e.g., static code analysis, dependency scanning, compliance checks) is automated and integrated into the CI/CD pipeline.
+
+`Collaboration` Developers, security teams, and operations work closely to share responsibility for security.
+
+`Continuous Monitoring` Systems are monitored for vulnerabilities and compliance continuously, even after deployment.
+
+`Security as Code` Security policies and controls are codified and version-controlled like application code.
+
+
+
+### DevSecOps Lifecycle :-
+
+
+`Planning`
+
+Teams define security requirements and threat models early.
+
+Use tools like Jira, Confluence for collaboration.
+
+Security is treated as a shared responsibility from the start.
+
+
+`Development`
+
+Developers use secure coding practices and pre-approved libraries.
+
+Tools :-
+
+Static Application Security Testing (SAST) – e.g., SonarQube, Checkmarx.
+
+IDE Plugins – help catch vulnerabilities as code is written.
+
+
+`Build & Test (CI/CD)`
+
+Automated pipelines run security scans:
+
+SAST – code analysis.
+
+DAST (Dynamic testing) – run-time behavior testing.
+
+Dependency Scanning – e.g., Snyk, OWASP Dependency-Check.
+
+Unit and integration tests include security tests.
+
+`Release`
+
+Ensure configurations follow secure baselines.
+
+Infrastructure as Code (IaC) is scanned for misconfigurations.
+
+Tools :- Terraform with Checkov or tfsec, Kubernetes YAMLs with kube-score.
+
+`Deploy`
+
+Use automated, secure deployment with tools like GitLab CI/CD, Jenkins, ArgoCD.
+
+Image scanning (e.g., Trivy, Clair) for container security.
+
+`Operate`
+
+Continuous monitoring for threats and compliance.
+
+Tools :-
+
+SIEM: Splunk, ELK Stack.
+
+Runtime security: Falco, Aqua Security.
+
+Vulnerability Management: Qualys, Tenable.
+
+`Monitor & Respond`
+
+Incident detection and response integrated into ops.
+
+Feedback loops ensure that security findings lead to code fixes or pipeline adjustments.
+
+
+
+### Why It Matters ?
+
+
+Traditional security practices often slow down development. 
+
+DevSecOps helps overcome this by ensuring security is :-
+
+`Faster Delivery` Secure code doesn't slow down release cycles.
+
+`Reduced Costs` Fixing issues early is cheaper than post-deployment.
+
+`Stronger Security Posture` Continuous vigilance against threats.
+
+`Improved Compliance` Easier audits and regulatory alignment (e.g., PCI-DSS, HIPAA).
+
+`Scalable` Adaptable to modern cloud-native environments.
+
+`Consistent` Applied across all development stages.
+
+
+
+## Traditional DevOps vs. DevSecOps
+=========================================
+
+
+`DevOps :- Let’s release software faster and more reliably.`
+
+`DevSecOps :- Let’s release software faster, more reliably, and securely.`
+
+
+
+| Aspect                 | **DevOps**                                             | **DevSecOps**                                                   |
+| ---------------------- | ------------------------------------------------------ | --------------------------------------------------------------- |
+| **Focus**              | Speed, collaboration, automation (Dev + Ops)           | Speed **plus** integrated **security** at every stage           |
+| **Security Role**      | Handled by a separate security team, often at the end  | **Built-in** responsibility for all (Dev, Sec, and Ops teams)   |
+| **Security Timing**    | Added **after** development (reactive)                 | Integrated **from the start** (proactive/“shift-left”)          |
+| **Tools**              | Jenkins, Docker, Kubernetes, Git                       | Includes DevOps tools **plus** SAST, DAST, SCA, IaC scanners    |
+| **Automation**         | Automates build, test, deploy                          | Automates **security testing and compliance checks** too        |
+| **Speed vs. Security** | Prioritizes speed, risk of technical debt              | Balances speed **with security** to reduce long-term risk       |
+| **Feedback Loops**     | Operational feedback (monitoring, errors, performance) | Adds **security feedback** (vulns, misconfigs, compliance gaps) |
+| **Compliance**         | Typically manual, after-the-fact                       | Automated and continuous                                        |
+| **Culture**            | Dev and Ops collaboration                              | Dev, Sec, and Ops collaboration (“security is everyone’s job”)  |
+
+
+
+
+## What is Shift-Left Security ?
+======================================
+
+
+Shift-left security is a principle in DevSecOps that emphasizes moving security checks earlier in the software development lifecycle—to the "left" on a timeline of development stages.
+
+
+### Why Shift Left ?
+
+
+`Fixing bugs early` = cheaper and easier, A bug found during development might cost $100 to fix. Found in production? $10,000+.
+
+`Faster Delivery` = Fewer last-minute blockers = faster releases.
+
+`Security Ownership` = Developers and testers are equipped to detect and resolve issues themselves.
+
+
+### Common Shift-Left Security Practices
+
+
+Static Application Security Testing (SAST) in CI/CD 
+
+Software Composition Analysis (SCA)
+
+
+## Challenges of DevSecOps
+================================
+
+
+`Cultural Resistance`
+
+Shifting security responsibility to development teams can face pushback or resistance, especially in traditional organizations.
+
+`Skills Gap`
+
+Developers may not have the necessary security knowledge, and security teams may lack development experience.
+
+`Tool Overload & Integration Issues`
+
+Integrating multiple security tools into CI/CD pipelines can be complex and require maintenance.
+
+`False Positives`
+
+Automated tools can produce excessive or inaccurate alerts, slowing down teams and reducing trust in tools.
+
+`Process Complexity`
+
+Implementing DevSecOps involves changes in processes, policies, tooling, and team structures.
+
+`Initial Time & Resource Investment`
+
+It takes time to train teams, set up secure CI/CD pipelines, and define governance policies.
+
+`Measuring Success`
+
+It can be difficult to define and measure KPIs for security improvements, especially early on.
+
+
+=============END===========================
