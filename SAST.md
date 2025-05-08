@@ -117,3 +117,62 @@ The scanner that detected it (e.g., Bandit, ESLint, Brakeman, etc.).
 `Track` Use the Security Dashboard for ongoing vulnerability tracking.
 
 You can download or view the raw gl-sast-report.json artifact if you want to parse it or use it in other tools.
+
+
+## Best practices to address vulnerabilities
+====================================================
+
+`Prioritize by Severity and Confidence` 
+
+Start with Critical & High severity and High confidence issues.
+
+Use tools like GitLab’s Security Dashboard to visualize and sort issues.
+
+Don’t ignore Medium/Low severity—many breaches start small.
+
+`Apply Secure Coding Principles`
+
+Sanitize and validate all inputs (e.g., to prevent XSS, SQLi).
+
+Use parameterized queries for database access.
+
+Avoid using eval(), hardcoded secrets, or insecure cryptographic algorithms.
+
+`Use Safe Libraries and Frameworks`
+
+Stay up to date with dependencies using tools like Dependabot or GitLab’s Dependency Scanning.
+
+Replace outdated or vulnerable libraries with patched versions.
+
+`Implement Defense in Depth`
+
+Use multiple layers of security: e.g., WAF, secure headers, RBAC.
+
+Don’t rely solely on SAST—combine with DAST, dependency scanning, and secret detection.
+
+`Review and Test Thoroughly`
+
+Conduct code reviews that include security as a checklist item.
+
+Write unit/integration tests for security-related logic.
+
+Use GitLab Merge Request security widgets to catch issues before merging.
+
+`Track and Document Decisions`
+
+If you dismiss a vulnerability in GitLab, provide a justification (e.g., false positive, risk accepted).
+
+Create internal security guidelines and keep them updated.
+
+`Train Developers in Secure Coding`
+
+Run periodic training on OWASP Top 10, language-specific vulnerabilities, etc.
+
+Encourage a security-first culture.
+
+`Automate Where Possible`
+
+Integrate SAST, Dependency Scanning, Secret Detection, and License Compliance into your GitLab CI/CD pipeline.
+
+Enable blocking on merge for unaddressed high-risk vulnerabilities (when feasible).
+
