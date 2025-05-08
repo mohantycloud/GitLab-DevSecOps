@@ -180,6 +180,21 @@ By analyzing both static (SAST) and dynamic (DAST) security data, you can get a 
   - Links to suggested remediation steps.
     
 
+### Summary of the DAST Analysis Process
+------------------------------------------------
+
+  - Review the results from the DAST scan in GitLab’s Security Dashboard.
+  - Prioritize vulnerabilities based on their severity (Critical, High, Medium, Low).
+  - Take action on the vulnerabilities by applying fixes, such as improving input validation or addressing broken access control.
+  - Re-run the DAST scan after fixes to ensure vulnerabilities are resolved.
+  - Integrate DAST into the CI/CD pipeline for continuous monitoring of application security.
+
+
+
+
+
+
+
 
 
 
